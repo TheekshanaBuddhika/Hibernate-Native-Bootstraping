@@ -9,3 +9,6 @@
         AUTO - database platform eka most suitable generation type eka select karagannawa
 ----------------------------------------------------------------------------------------------------------------
 @Transient - need to keep a attribute in a entity but not add them to tables
+-----------------------------------------------------------------------------------------------------------------------
+@CreationTimestamp - provide real time date and time to a table
+---------------------------------------------------------------------------------------------------------------------

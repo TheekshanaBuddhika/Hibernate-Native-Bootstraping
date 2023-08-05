@@ -1,6 +1,9 @@
 package lk.ijse.gdse.orm.hibernate.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 /*@Entity(name = "customer")*/
 
@@ -24,6 +27,9 @@ public class Customer {
 
     @Transient
     private String dob;
+
+    @CreationTimestamp
+    private Timestamp datetime;
 
     public Customer(int id, String name, String address, Double salary) {
         this.id = id;
