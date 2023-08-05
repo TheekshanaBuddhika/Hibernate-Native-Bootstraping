@@ -1,0 +1,7 @@
+@Entity - specify class is a entity
+@Table
+@Id - primary key of the entity
+@Column
+-------------------------------------------------------------------------------------------------------------------------
+@Generated Value - define generation types ( AUTO / IDENTITY / SEQUENCE / TABLE )
+        IDENTITY - auto increment

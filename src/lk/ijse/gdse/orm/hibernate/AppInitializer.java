@@ -65,14 +65,26 @@ public class AppInitializer {
         CustomerRepository customerRepository = new CustomerRepository();
         int cust = customerRepository.saveCustomer(customer);
         System.out.println("Saved Cust id: "+cust);
-        CustomerRepository repository = new CustomerRepository();
+
+       /* CustomerRepository repository = new CustomerRepository();
         System.out.println(repository.getCustomer(cust));
+
+        repository = new CustomerRepository();
+        customer.setName("kamal");
+        customer.setAddress("Matara");
+        repository.updateCustomer(customer);
+        System.out.println(customer);
+
+        repository = new CustomerRepository();
+        System.out.println(repository.deleteCustomer(customer));*/
+
+
     }
 
 
     public static Customer getCustomer(){
         Customer customer = new Customer();
-        customer.setId(4);
+        customer.setId(1);
         customer.setName("ew");
         customer.setAddress("Galle");
         customer.setSalary(33433.00);

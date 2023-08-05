@@ -1,9 +1,6 @@
 package lk.ijse.gdse.orm.hibernate.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /*@Entity(name = "customer")*/
 
@@ -12,6 +9,7 @@ import javax.persistence.Table;
 public class Customer {
 
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
     private int id;
 

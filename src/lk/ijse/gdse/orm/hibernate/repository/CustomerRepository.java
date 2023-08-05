@@ -19,14 +19,59 @@ public class CustomerRepository {
     }
 
     public Customer getCustomer(int id){
-        return session.get(Customer.class,id);
+        try {
+            return session.get(Customer.class,id);
+        }catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     public int saveCustomer(Customer customer){
-          Transaction transaction = session.beginTransaction();
-          int customerId = (int) session.save(customer);
-          transaction.commit();
-          session.close();
-          return customerId;
+        Transaction transaction = session.beginTransaction();
+        try {
+            int customerId = (int) session.save(customer);
+            transaction.commit();
+            session.close();
+            return customerId;
+        }catch (Exception e){
+            transaction.rollback();
+            session.close();
+            e.printStackTrace();
+            return -1;
+        }
     }
+
+    public boolean updateCustomer(Customer customer){
+        Transaction transaction = session.beginTransaction();
+        try {
+            session.update(customer);
+            transaction.commit();
+            return true;
+        }catch (Exception e){
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        }finally {
+            session.close();
+        }
+    }
+
+    public boolean deleteCustomer(Customer customer){
+        Transaction transaction = session.beginTransaction();
+        try {
+            session.delete(customer);
+            transaction.commit();
+            return true;
+        }catch (Exception e){
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        }finally {
+            session.close();
+        }
+    }
+
+
+
 }
