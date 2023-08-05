@@ -2,15 +2,17 @@ package lk.ijse.gdse.orm.hibernate;
 
 import lk.ijse.gdse.orm.hibernate.config.SessionFactoryConfig;
 import lk.ijse.gdse.orm.hibernate.entity.Customer;
+import lk.ijse.gdse.orm.hibernate.repository.CustomerRepository;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.engine.transaction.internal.TransactionImpl;
 
 public class AppInitializer {
+
     public static void main(String[] args) {
 
         //Save using save method
-        Session session = SessionFactoryConfig.getInstance().getSession();
+      /*  Session session = SessionFactoryConfig.getInstance().getSession();
 
         Customer customer = new Customer();
         customer.setId(1);
@@ -22,7 +24,7 @@ public class AppInitializer {
         session.save(customer);
         transaction.commit();
 
-        session.close();
+        session.close();*/
 
         //Update using save method
       /*  Session session1 = SessionFactoryConfig.getInstance().getSession();
@@ -58,6 +60,23 @@ public class AppInitializer {
 
         transaction.commit();
         session3.close();*/
+        Customer customer = getCustomer() ;
 
+        CustomerRepository customerRepository = new CustomerRepository();
+        int cust = customerRepository.saveCustomer(customer);
+        System.out.println("Saved Cust id: "+cust);
+        CustomerRepository repository = new CustomerRepository();
+        System.out.println(repository.getCustomer(cust));
     }
+
+
+    public static Customer getCustomer(){
+        Customer customer = new Customer();
+        customer.setId(4);
+        customer.setName("ew");
+        customer.setAddress("Galle");
+        customer.setSalary(33433.00);
+        return customer;
+    }
+
 }
