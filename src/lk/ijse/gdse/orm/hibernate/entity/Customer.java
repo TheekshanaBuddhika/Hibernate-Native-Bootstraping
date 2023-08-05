@@ -1,5 +1,6 @@
 package lk.ijse.gdse.orm.hibernate.entity;
 
+import lk.ijse.gdse.orm.hibernate.embeded.NameIdentifier;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -16,8 +17,10 @@ public class Customer {
     @Column(name = "customer_id")
     private int id;
 
-    @Column(name = "customer_name")
-    private String name;
+    /*@Column(name = "customer_name")
+    private String name;*/
+
+    private NameIdentifier nameIdentifier;
 
     @Column(name = "customer_address")
     private String address;
@@ -31,14 +34,16 @@ public class Customer {
     @CreationTimestamp
     private Timestamp datetime;
 
-    public Customer(int id, String name, String address, Double salary) {
-        this.id = id;
-        this.name = name;
-        this.address = address;
-        this.salary = salary;
+    public Customer() {
     }
 
-    public Customer() {
+    public Customer(int id, NameIdentifier nameIdentifier, String address, Double salary, String dob, Timestamp datetime) {
+        this.id = id;
+        this.nameIdentifier = nameIdentifier;
+        this.address = address;
+        this.salary = salary;
+        this.dob = dob;
+        this.datetime = datetime;
     }
 
     public int getId() {
@@ -49,12 +54,12 @@ public class Customer {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public NameIdentifier getNameIdentifier() {
+        return nameIdentifier;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameIdentifier(NameIdentifier nameIdentifier) {
+        this.nameIdentifier = nameIdentifier;
     }
 
     public String getAddress() {
@@ -73,13 +78,31 @@ public class Customer {
         this.salary = salary;
     }
 
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public Timestamp getDatetime() {
+        return datetime;
+    }
+
+    public void setDatetime(Timestamp datetime) {
+        this.datetime = datetime;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", nameIdentifier=" + nameIdentifier +
                 ", address='" + address + '\'' +
                 ", salary=" + salary +
+                ", dob='" + dob + '\'' +
+                ", datetime=" + datetime +
                 '}';
     }
 }

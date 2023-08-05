@@ -1,6 +1,7 @@
 package lk.ijse.gdse.orm.hibernate;
 
 import lk.ijse.gdse.orm.hibernate.config.SessionFactoryConfig;
+import lk.ijse.gdse.orm.hibernate.embeded.NameIdentifier;
 import lk.ijse.gdse.orm.hibernate.entity.Customer;
 import lk.ijse.gdse.orm.hibernate.repository.CustomerRepository;
 import org.hibernate.Session;
@@ -85,7 +86,11 @@ public class AppInitializer {
     public static Customer getCustomer(){
         Customer customer = new Customer();
         customer.setId(1);
-        customer.setName("ew");
+        NameIdentifier nameIdentifier = new NameIdentifier();
+        nameIdentifier.setFirst("Kmal");
+        nameIdentifier.setSecond("mk");
+        nameIdentifier.setThird("mmmm");
+        customer.setNameIdentifier(nameIdentifier);
         customer.setAddress("Galle");
         customer.setSalary(33433.00);
         return customer;
