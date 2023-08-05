@@ -1,12 +1,16 @@
 package lk.ijse.gdse.orm.hibernate;
 
 import lk.ijse.gdse.orm.hibernate.config.SessionFactoryConfig;
+import lk.ijse.gdse.orm.hibernate.embeded.MobileNo;
 import lk.ijse.gdse.orm.hibernate.embeded.NameIdentifier;
 import lk.ijse.gdse.orm.hibernate.entity.Customer;
 import lk.ijse.gdse.orm.hibernate.repository.CustomerRepository;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.engine.transaction.internal.TransactionImpl;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AppInitializer {
 
@@ -93,6 +97,18 @@ public class AppInitializer {
         customer.setNameIdentifier(nameIdentifier);
         customer.setAddress("Galle");
         customer.setSalary(33433.00);
+        List<MobileNo>mobile = new ArrayList<>();
+        MobileNo mobile1 = new MobileNo();
+        mobile1.setType("Home");
+        mobile1.setMobileNo("098653567");
+        mobile.add(mobile1);
+
+        MobileNo mobile2 = new MobileNo();
+        mobile2.setType("personal");
+        mobile2.setMobileNo("234567890-");
+        mobile.add(mobile2);
+
+        customer.setMobileNos(mobile);
         return customer;
     }
 

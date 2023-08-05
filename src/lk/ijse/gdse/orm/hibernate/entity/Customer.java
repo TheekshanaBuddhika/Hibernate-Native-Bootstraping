@@ -1,10 +1,13 @@
 package lk.ijse.gdse.orm.hibernate.entity;
 
+import lk.ijse.gdse.orm.hibernate.embeded.MobileNo;
 import lk.ijse.gdse.orm.hibernate.embeded.NameIdentifier;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 /*@Entity(name = "customer")*/
 
@@ -22,6 +25,10 @@ public class Customer {
 
     private NameIdentifier nameIdentifier;
 
+    @ElementCollection
+    @CollectionTable(name = "customer_mobile_numbers"  , joinColumns = @JoinColumn(name = "customer_id"))
+    private List<MobileNo>mobileNos = new ArrayList<>();
+
     @Column(name = "customer_address")
     private String address;
 
@@ -34,16 +41,17 @@ public class Customer {
     @CreationTimestamp
     private Timestamp datetime;
 
-    public Customer() {
-    }
-
-    public Customer(int id, NameIdentifier nameIdentifier, String address, Double salary, String dob, Timestamp datetime) {
+    public Customer(int id, NameIdentifier nameIdentifier, List<MobileNo> mobileNos, String address, Double salary, String dob, Timestamp datetime) {
         this.id = id;
         this.nameIdentifier = nameIdentifier;
+        this.mobileNos = mobileNos;
         this.address = address;
         this.salary = salary;
         this.dob = dob;
         this.datetime = datetime;
+    }
+
+    public Customer() {
     }
 
     public int getId() {
@@ -99,10 +107,19 @@ public class Customer {
         return "Customer{" +
                 "id=" + id +
                 ", nameIdentifier=" + nameIdentifier +
+                ", mobileNos=" + mobileNos +
                 ", address='" + address + '\'' +
                 ", salary=" + salary +
                 ", dob='" + dob + '\'' +
                 ", datetime=" + datetime +
                 '}';
+    }
+
+    public List<MobileNo> getMobileNos() {
+        return mobileNos;
+    }
+
+    public void setMobileNos(List<MobileNo> mobileNos) {
+        this.mobileNos = mobileNos;
     }
 }
