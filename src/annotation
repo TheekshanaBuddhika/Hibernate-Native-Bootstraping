@@ -5,3 +5,7 @@
 -------------------------------------------------------------------------------------------------------------------------
 @Generated Value - define generation types ( AUTO / IDENTITY / SEQUENCE / TABLE )
         IDENTITY - auto increment
+        SEQUENCE - create a sequence table contains next value for the increment
+        AUTO - database platform eka most suitable generation type eka select karagannawa
+----------------------------------------------------------------------------------------------------------------
+@Transient - need to keep a attribute in a entity but not add them to tables

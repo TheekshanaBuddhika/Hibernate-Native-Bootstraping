@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Customer {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
+    @GeneratedValue( strategy = GenerationType.AUTO)
     @Column(name = "customer_id")
     private int id;
 
@@ -21,6 +21,9 @@ public class Customer {
 
     @Column(name = "customer_salary")
     private Double salary;
+
+    @Transient
+    private String dob;
 
     public Customer(int id, String name, String address, Double salary) {
         this.id = id;
