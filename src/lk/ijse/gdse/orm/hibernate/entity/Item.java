@@ -8,6 +8,8 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -31,7 +33,7 @@ public class Item {
     @Column(name = "item_description")
     private String description;
 
-    @ManyToMany(mappedBy = "item", targetEntity = Order.class)
-    private Order order;
+   /* @ManyToMany
+    private List<Order> orders = new ArrayList<>();*/
 
 }

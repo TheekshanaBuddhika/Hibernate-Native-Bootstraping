@@ -8,6 +8,8 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -29,12 +31,12 @@ public class Order {
     @Column(name = "order_description")
     private String description;
 
-    @ManyToOne(optional = false , targetEntity = Customer.class)
+    @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    @ManyToMany(targetEntity = Item.class)
-    private Item item;
+   /* @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+    private List<Item> items = new ArrayList<>();*/
 
 
 
