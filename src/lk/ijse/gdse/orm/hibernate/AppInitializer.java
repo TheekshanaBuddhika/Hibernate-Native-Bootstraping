@@ -90,15 +90,15 @@ public class AppInitializer {
     public static Customer getCustomer(){
         Customer customer = new Customer();
         customer.setId(1);
-        NameIdentifier nameIdentifier = new NameIdentifier();
+       /* NameIdentifier nameIdentifier = new NameIdentifier();
         nameIdentifier.setFirst("Kmal");
         nameIdentifier.setSecond("mk");
-        nameIdentifier.setThird("mmmm");
-        customer.setNameIdentifier(nameIdentifier);
+        nameIdentifier.setThird("mmmm");*/
+        customer.setName("Kamal");
         customer.setAddress("Galle");
         customer.setSalary(33433.00);
         customer.setAge(12);
-        List<MobileNo>mobile = new ArrayList<>();
+     /*   List<MobileNo>mobile = new ArrayList<>();
         MobileNo mobile1 = new MobileNo();
         mobile1.setType("Home");
         mobile1.setMobileNo("098653567");
@@ -109,7 +109,7 @@ public class AppInitializer {
         mobile2.setMobileNo("234567890-");
         mobile.add(mobile2);
 
-        customer.setMobileNos(mobile);
+        customer.setMobileNos(mobile);*/
         return customer;
     }
 
