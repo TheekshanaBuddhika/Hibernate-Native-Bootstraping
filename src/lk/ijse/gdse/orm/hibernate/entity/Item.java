@@ -24,16 +24,10 @@ public class Item {
     @Column(name = "item_id")
     private int id;
 
-    @Column(name = "item_quantity")
-    private int quantity;
-
-    @Column(name = "item_price")
-    private Double price;
-
     @Column(name = "item_description")
     private String description;
 
-   /* @ManyToMany
+/*    @ManyToMany(mappedBy = "items")
     private List<Order> orders = new ArrayList<>();*/
 
 }
