@@ -29,7 +29,7 @@ public class Order {
     @Column(name = "order_description")
     private String description;
 
-    @ManyToOne(optional = false)
-    private Customer customer;
+    @ManyToOne(optional = false , targetEntity = Customer.class)
+    private String custid;
 
 }
