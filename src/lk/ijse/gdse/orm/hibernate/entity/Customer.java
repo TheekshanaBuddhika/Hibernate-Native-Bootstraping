@@ -34,6 +34,6 @@ public class Customer {
     @Column(name = "customer_salary")
     private Double salary;
 
-    @OneToMany(cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL , fetch = FetchType.LAZY ,mappedBy = "customer")
     private List<Order> orders =new ArrayList<>();
 }

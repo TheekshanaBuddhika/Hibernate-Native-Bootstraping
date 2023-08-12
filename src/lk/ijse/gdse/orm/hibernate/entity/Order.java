@@ -30,6 +30,12 @@ public class Order {
     private String description;
 
     @ManyToOne(optional = false , targetEntity = Customer.class)
-    private String custid;
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+    @ManyToMany(targetEntity = Item.class)
+    private Item item;
+
+
 
 }
