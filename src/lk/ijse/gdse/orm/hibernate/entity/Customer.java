@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -31,4 +33,7 @@ public class Customer {
 
     @Column(name = "customer_salary")
     private Double salary;
+
+    @OneToMany
+    private List<Order> orders =new ArrayList<>();
 }
