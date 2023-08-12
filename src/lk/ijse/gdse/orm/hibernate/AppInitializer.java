@@ -97,6 +97,7 @@ public class AppInitializer {
         customer.setNameIdentifier(nameIdentifier);
         customer.setAddress("Galle");
         customer.setSalary(33433.00);
+        customer.setAge(12);
         List<MobileNo>mobile = new ArrayList<>();
         MobileNo mobile1 = new MobileNo();
         mobile1.setType("Home");
