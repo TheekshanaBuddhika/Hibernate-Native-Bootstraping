@@ -3,6 +3,7 @@ package lk.ijse.gdse.orm.hibernate.config;
 import lk.ijse.gdse.orm.hibernate.entity.Customer;
 import lk.ijse.gdse.orm.hibernate.entity.Item;
 import lk.ijse.gdse.orm.hibernate.entity.Order;
+import lk.ijse.gdse.orm.hibernate.entity.OrderDetail;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -33,6 +34,7 @@ public class SessionFactoryConfig {
                         .addAnnotatedClass(Order.class)
                         .addAnnotatedClass(Customer.class)
                         .addAnnotatedClass(Item.class)
+                        .addAnnotatedClass(OrderDetail.class)
                         .buildSessionFactory();
     }
 

@@ -27,7 +27,7 @@ public class Item {
     @Column(name = "item_description")
     private String description;
 
-    @OneToMany(cascade = CascadeType.ALL , fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL , fetch = FetchType.LAZY , mappedBy = "item")
     private List<OrderDetail> orderDetails = new ArrayList<>();
 
 /*    @ManyToMany(mappedBy = "items")

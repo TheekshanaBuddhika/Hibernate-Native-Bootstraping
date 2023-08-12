@@ -25,10 +25,10 @@ public class OrderDetail {
     private OrderDetailPK orderDetailPK;
 
     @ManyToOne
-    @JoinColumn(name = "order_id" , referencedColumnName = "order_id")
+    @JoinColumn(name = "order_id" , referencedColumnName = "order_id" , insertable = false , updatable = false)
     private Order order;
 
     @ManyToOne
-    @JoinColumn(name = "item_id" , referencedColumnName = "item_id")
+    @JoinColumn(name = "item_id" , referencedColumnName = "item_id" ,insertable = false , updatable = false)
     private Item item;
 }

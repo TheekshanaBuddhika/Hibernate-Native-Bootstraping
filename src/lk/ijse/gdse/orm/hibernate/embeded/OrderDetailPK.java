@@ -7,13 +7,14 @@ import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Embeddable
-public class OrderDetailPK {
+public class OrderDetailPK implements Serializable {
 
     @Column(name = "order_id")
     private int orderId;
