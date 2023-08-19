@@ -4,7 +4,7 @@ import lk.ijse.gdse.orm.hibernate.config.SessionFactoryConfig;
 import lk.ijse.gdse.orm.hibernate.entity.Customer;
 import org.hibernate.Session;
 
-public class TransientState {
+public class PersistantState {
 
     public static void main(String[] args) {
 
@@ -18,12 +18,14 @@ public class TransientState {
         customer.setSalary(33433.00);
         customer.setAge(12);
 
+        session.save(customer);
+
         System.out.println(isExist(session, customer));
 
     }
-    
+
     private static String isExist(Session session,Customer customer){
-        return session.contains(customer) ? "it is not transient":"it is  transient";
+        return session.contains(customer) ? "it is persistant":"it is transient";
     }
 
 }
