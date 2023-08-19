@@ -70,7 +70,6 @@ public class AppInitializer {
         CustomerRepository customerRepository = new CustomerRepository();
         int cust = customerRepository.saveCustomer(customer);
         System.out.println("Saved Cust id: "+cust);
-
        /* CustomerRepository repository = new CustomerRepository();
         System.out.println(repository.getCustomer(cust));
 
