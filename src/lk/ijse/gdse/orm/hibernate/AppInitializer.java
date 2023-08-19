@@ -17,7 +17,7 @@ public class AppInitializer {
     public static void main(String[] args) {
 
         //Save using save method
-      /*  Session session = SessionFactoryConfig.getInstance().getSession();
+  Session session = SessionFactoryConfig.getInstance().getSession();
 
         Customer customer = new Customer();
         customer.setId(1);
@@ -29,10 +29,11 @@ public class AppInitializer {
         session.save(customer);
         transaction.commit();
 
-        session.close();*/
+        session.close();
+
 
         //Update using save method
-      /*  Session session1 = SessionFactoryConfig.getInstance().getSession();
+  Session session1 = SessionFactoryConfig.getInstance().getSession();
 
         Transaction transaction = session1.beginTransaction();
         Customer customer1 = session1.get(Customer.class, 1);
@@ -42,10 +43,11 @@ public class AppInitializer {
 
         transaction.commit();
         session1.close();
-*/
+
+
 
         //Update using update method
-      /*  Session session2 = SessionFactoryConfig.getInstance().getSession();
+  Session session2 = SessionFactoryConfig.getInstance().getSession();
 
         Transaction transaction = session2.beginTransaction();
         Customer customer2 = session2.get(Customer.class, 1);
@@ -54,24 +56,26 @@ public class AppInitializer {
         session2.update(customer2);
 
         transaction.commit();
-        session2.close();*/
+        session2.close();
+
 
         //Delete using delete method
-      /*  Session session3 = SessionFactoryConfig.getInstance().getSession();
+  Session session3 = SessionFactoryConfig.getInstance().getSession();
 
         Transaction transaction = session3.beginTransaction();
         Customer customer3 = session3.get(Customer.class, 1);
         session3.delete(customer3);
 
         transaction.commit();
-        session3.close();*/
+        session3.close();
+
         Customer customer = getCustomer() ;
 
         CustomerRepository customerRepository = new CustomerRepository();
         int cust = customerRepository.saveCustomer(customer);
         System.out.println("Saved Cust id: "+cust);
 
-       /* CustomerRepository repository = new CustomerRepository();
+ CustomerRepository repository = new CustomerRepository();
         System.out.println(repository.getCustomer(cust));
 
         repository = new CustomerRepository();
@@ -81,7 +85,8 @@ public class AppInitializer {
         System.out.println(customer);
 
         repository = new CustomerRepository();
-        System.out.println(repository.deleteCustomer(customer));*/
+        System.out.println(repository.deleteCustomer(customer));
+
 
 
     }
@@ -90,15 +95,16 @@ public class AppInitializer {
     public static Customer getCustomer(){
         Customer customer = new Customer();
         customer.setId(1);
-       /* NameIdentifier nameIdentifier = new NameIdentifier();
+ NameIdentifier nameIdentifier = new NameIdentifier();
         nameIdentifier.setFirst("Kmal");
         nameIdentifier.setSecond("mk");
-        nameIdentifier.setThird("mmmm");*/
+        nameIdentifier.setThird("mmmm");
+
         customer.setName("Kamal");
         customer.setAddress("Galle");
         customer.setSalary(33433.00);
         customer.setAge(12);
-     /*   List<MobileNo>mobile = new ArrayList<>();
+   List<MobileNo>mobile = new ArrayList<>();
         MobileNo mobile1 = new MobileNo();
         mobile1.setType("Home");
         mobile1.setMobileNo("098653567");
@@ -109,7 +115,8 @@ public class AppInitializer {
         mobile2.setMobileNo("234567890-");
         mobile.add(mobile2);
 
-        customer.setMobileNos(mobile);*/
+        customer.setMobileNos(mobile);
+
         return customer;
     }
 
