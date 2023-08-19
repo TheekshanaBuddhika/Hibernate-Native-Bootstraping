@@ -16,5 +16,11 @@ public class SQLQueryEvaluator {
         CustomerRepository customerRepository1 = new CustomerRepository();
         Customer customer = customerRepository1.getbyIdJpaql(1);
         System.out.println(customer);
+
+        CustomerRepository customerRepository2 = new CustomerRepository();
+        List<Customer> customers1 = customerRepository2.getAllHql();
+        for (Customer customer1:customers1) {
+            System.out.println(customer1);
+        }
     }
 }

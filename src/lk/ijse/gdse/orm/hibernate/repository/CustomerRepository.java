@@ -106,6 +106,14 @@ public class CustomerRepository {
         return customer;
     }
 
+    //using HQl query
+    public List<Customer> getAllHql(){
+        String sql = "FROM Customer";
+        Query query = session.createQuery(sql);
+        List list = query.list();
+        session.close();
+        return list;
+    }
 
 
 }
