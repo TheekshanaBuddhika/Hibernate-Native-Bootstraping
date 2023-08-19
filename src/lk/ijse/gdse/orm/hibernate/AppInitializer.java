@@ -92,7 +92,7 @@ public class AppInitializer {
        /* NameIdentifier nameIdentifier = new NameIdentifier();
         nameIdentifier.setFirst("Kmal");
         nameIdentifier.setSecond("mk");
-        nameIdentifier.setThird("mmmm");*/
+        nameIdentifier.setThird("mmmm");*/ 
         customer.setName("Kamal");
         customer.setAddress("Galle");
         customer.setSalary(33433.00);
