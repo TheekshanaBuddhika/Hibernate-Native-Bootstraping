@@ -79,12 +79,31 @@ public class CustomerRepository {
     }
 
     //using native query
-    public List<Customer> getAllNative(){
+   /* public List<Customer> getAllNative(){
         String sql = "SELECT * FROM customer";
         NativeQuery query = session.createNativeQuery(sql);
         List list = query.list();
         session.close();
         return list;
+    }*/
+
+
+    //using JPQL query
+    public List<Customer> getAllJpaql(){
+        String sql = "SELECT C FROM Customer AS C";
+        Query query = session.createQuery(sql);
+        List list = query.list();
+        session.close();
+        return list;
+    }
+
+    public Customer getbyIdJpaql(int id){
+        String sql = "SELECT C FROM Customer AS C where C.id=:cus_id";
+        Query query = session.createQuery(sql);
+        query.setParameter("cus_id",id);
+        Customer customer = (Customer) query.getSingleResult();
+        session.close();
+        return customer;
     }
 
 
