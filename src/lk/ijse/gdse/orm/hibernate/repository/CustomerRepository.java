@@ -5,6 +5,10 @@ import lk.ijse.gdse.orm.hibernate.entity.Customer;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class CustomerRepository {
 
@@ -72,6 +76,15 @@ public class CustomerRepository {
         }finally {
             session.close();
         }
+    }
+
+    //using native query
+    public List<Customer> getAllNative(){
+        String sql = "SELECT * FROM customer";
+        NativeQuery query = session.createNativeQuery(sql);
+        List list = query.list();
+        session.close();
+        return list;
     }
 
 
