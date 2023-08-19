@@ -8,9 +8,10 @@ public class PersistantState {
 
     public static void main(String[] args) {
 
+        //Persistant State
         Session session = SessionFactoryConfig.getInstance().getSession();
 
-        //Transient State
+
         Customer customer = new Customer();
         customer.setId(1);
         customer.setName("Kamal");
